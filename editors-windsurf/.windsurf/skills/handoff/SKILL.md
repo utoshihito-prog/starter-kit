@@ -12,7 +12,7 @@ disable-model-invocation: true
 1. docs/tasks.md を読んで進捗状況をまとめる
 2. `git log --oneline -20` から最近の作業内容を抽出
 3. docs/architecture.md から設計判断の要点を拾う
-4. 以下の構成で HANDOFF.md を生成:
+4. 以下の構成で HANDOFF.md を生成する（各セクション省略不可）:
 
 # 引き継ぎ資料
 
@@ -42,3 +42,16 @@ disable-model-invocation: true
 > まず HANDOFF.md を読んで状況を把握してください。
 > 次に docs/tasks.md と docs/architecture.md も読んでください。
 > 状況を要約して、次にやるべきことを提案してください。
+
+5. HANDOFF.md の品質チェック:
+   - ゼロコンテキストの人が読んで理解できるか確認する
+   - 環境変数のキー名が全て列挙されているか確認する
+   - 起動コマンドがコピペで動くか確認する
+
+## エッジケース
+
+| 状況 | 対処 |
+|------|------|
+| docs/tasks.md がない | git log + コード走査で進捗を推測して記載する |
+| git履歴がない | 「git履歴がありません」と記載。コードの状態から推測する |
+| .env.local がない | 「環境変数の設定ファイルがありません」と記載。必要なキーを推測して列挙する |
