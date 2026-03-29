@@ -16,61 +16,89 @@ AIと一緒に開発する時に「毎回同じ説明するのめんどくさい
 
 ## キットの構成
 
-このキットは **エージェントごとにフォルダが分かれています**。
-自分が使うエージェントのフォルダだけ取り出して使います。
+このキットは **エディタ（開発ツール）ごとにフォルダが分かれています**。
+自分が使うエディタのフォルダだけ取り出して使います。
+
+> **大事なポイント**: ここで選ぶのは「エディタ（開発ツール）」であって「AIモデル」ではありません。
+> 例えば Antigravity で Claude モデルを使う場合、選ぶのは「Antigravity」です。
 
 ```
 starter-kit/
-├── shared/       ← 全エージェント共通（必ず使う）
-├── claude/       ← Claude Code を使うならこれ
-├── codex/        ← Codex を使うならこれ
-├── gemini/       ← Gemini CLI を使うならこれ
-├── cursor/       ← Cursor を使うならこれ
-├── windsurf/     ← Windsurf を使うならこれ
-└── setup.sh      ← 自動で取り出してくれるスクリプト
+├── shared/             ← 全エディタ共通（必ず使う）
+├── editors-claude/     ← Claude Code 用
+├── editors-cursor/     ← Cursor 用
+├── editors-windsurf/   ← Windsurf 用
+├── editors-gemini/     ← Gemini CLI / Antigravity 用
+├── editors-codex/      ← Codex 用
+└── setup.sh            ← 対話式セットアップ
 ```
 
-**shared/ は必ず必要**。それに加えて、自分が使うエージェントのフォルダを取り出す。
-複数のエージェントを併用する場合は、複数フォルダを取り出す。
+**shared/ は必ず必要**。それに加えて、自分が使うエディタのフォルダを取り出す。
+
+---
+
+## 対応エディタ
+
+| エディタ | 種類 | setup.sh での名前 |
+|---------|------|-----------------|
+| Claude Code | ターミナルCLI | `claude-code` |
+| Cursor | VS Code系AI IDE | `cursor` |
+| Windsurf | VS Code系AI IDE | `windsurf` |
+| Antigravity | GoogleのAI IDE | `antigravity` |
+| Gemini CLI | ターミナルCLI | `gemini-cli` |
+| Codex (OpenAI) | ターミナルCLI | `codex` |
+
+> **エディタとモデルは別物です。**
+> - エディタ = コードを書く道具（VS Code的なもの）
+> - モデル = AIの頭脳（Claude, Gemini, GPT等）
+>
+> どのエディタでも複数のモデルが使えます。
+> Antigravity で Claude を使っても、選ぶのは `antigravity` です。
 
 ---
 
 ## 始め方
 
-### 方法 1: エージェントに頼む（初心者向け）
+### 方法 1: 対話モード（おすすめ）
 
-エージェント (Claude Code / Cursor / Gemini 等) を開いて、こう言うだけ:
+```bash
+bash ~/Desktop/starter-kit/setup.sh my-app
+```
+
+番号を選ぶだけ:
+
+```
+┌─────────────────────────────────────────┐
+│  どのエディタで開発しますか？            │
+│  （複数選べます。番号をスペース区切り）  │
+└─────────────────────────────────────────┘
+
+  1) Claude Code      … ターミナルで動くCLI
+  2) Cursor           … VS Code系のAI IDE
+  3) Windsurf         … VS Code系のAI IDE
+  4) Antigravity      … GoogleのAI IDE
+  5) Gemini CLI       … ターミナルで動くCLI
+  6) Codex            … OpenAIのCLI
+
+番号を入力 (例: 1 or 1 2):
+```
+
+### 方法 2: コマンドで直接指定
+
+```bash
+bash ~/Desktop/starter-kit/setup.sh my-app claude-code
+bash ~/Desktop/starter-kit/setup.sh my-app antigravity
+bash ~/Desktop/starter-kit/setup.sh my-app claude-code cursor   # 複数併用
+```
+
+### 方法 3: エージェントに頼む（初心者向け）
+
+エージェントを開いて、こう言うだけ:
 
 > ~/Desktop/starter-kit の中にバイブコーディングのスターターキットがあります。
 > これを使って「予約管理アプリ」のプロジェクトを作ってください。
 > 私は Claude Code を使っています。
 > setup.sh を実行してから /init-project で初期化してください。
-
-エージェントが自動で `shared/` + 指定したエージェントのフォルダを取り出して、
-質問に答えるだけでプロジェクトが完成します。
-
-### 方法 2: 自分でコマンドを打つ（慣れてる人向け）
-
-```bash
-# 「my-app」がプロジェクト名、「claude」が使うエージェント
-bash ~/Desktop/starter-kit/setup.sh my-app claude
-
-cd my-app && claude
-> /init-project
-```
-
-他のエージェントの場合:
-```bash
-bash ~/Desktop/starter-kit/setup.sh my-app codex      # Codex
-bash ~/Desktop/starter-kit/setup.sh my-app gemini      # Gemini
-bash ~/Desktop/starter-kit/setup.sh my-app cursor      # Cursor
-bash ~/Desktop/starter-kit/setup.sh my-app windsurf    # Windsurf
-```
-
-複数のエージェントを併用する場合:
-```bash
-bash ~/Desktop/starter-kit/setup.sh my-app claude cursor
-```
 
 ### 初めて使う時のコツ
 
@@ -160,20 +188,6 @@ HP制作やシステム開発で、フロント・バック・デザインを分
 HANDOFF.md が自動で作られます。引き継いだ人は:
 
 > 「このプロジェクトを引き継いだ。HANDOFF.md を読んで再開して」
-
----
-
-## 対応エージェント
-
-| エージェント | setup.sh での名前 |
-|------------|-----------------|
-| Claude Code | `claude` |
-| Codex (OpenAI) | `codex` |
-| Gemini CLI | `gemini` |
-| Cursor | `cursor` |
-| Windsurf | `windsurf` |
-
-複数使う場合は並べるだけ: `bash setup.sh my-app claude cursor`
 
 ---
 
@@ -270,4 +284,3 @@ HANDOFF.md が自動で作られます。引き継いだ人は:
 |---------|---------|
 | `/humanize` | AI臭い文章を自然な日本語に直す |
 | `/self-learn` | 作業パターンを見つけてスキルにする |
-
