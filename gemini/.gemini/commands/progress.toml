@@ -1,0 +1,3 @@
+[command]
+prompt = "docs/tasks.mdを読んで進捗バーで表示して"
+description = "いま何%終わったか進捗バーで見る"

@@ -1,0 +1,3 @@
+[command]
+prompt = "git diffを分析してコードの問題点をチェックして"
+description = "コードの問題点をチェックする"

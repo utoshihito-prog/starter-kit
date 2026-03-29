@@ -1,0 +1,3 @@
+[command]
+prompt = "コードを整理してきれいにして。Before/After比較付きで"
+description = "コードを整理してきれいにする"

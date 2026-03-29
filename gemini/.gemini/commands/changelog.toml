@@ -1,0 +1,3 @@
+[command]
+prompt = "gitの記録から更新履歴を自動で作って"
+description = "更新履歴を自動で作る"

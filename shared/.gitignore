@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+.DS_Store
+dist/
+build/
+.next/
+.nuxt/
+.output/
+.claude/settings.local.json
+*.log
+coverage/
+.turbo/

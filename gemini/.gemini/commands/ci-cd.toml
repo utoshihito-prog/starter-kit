@@ -1,0 +1,3 @@
+[command]
+prompt = "GitHub Actionsの自動テスト・デプロイ設定を作って"
+description = "CI/CD設定を作る"

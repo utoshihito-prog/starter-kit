@@ -1,0 +1,3 @@
+[command]
+prompt = "WCAGベースでアクセシビリティをチェックして"
+description = "アクセシビリティをチェックする"

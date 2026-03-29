@@ -1,0 +1,3 @@
+[command]
+prompt = "Playwrightでブラウザを自動操作してE2Eテストして"
+description = "ブラウザを自動で動かしてテストする"

@@ -1,0 +1,6 @@
+# Codex サンドボックス設定
+# デフォルト: workspace-write (ネットワークなし)
+# ネットワーク必要なスキル使用時は danger-full-access に変更
+
+sandbox_mode = "workspace-write"
+# sandbox_mode = "danger-full-access"

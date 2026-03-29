@@ -1,0 +1,3 @@
+[command]
+prompt = "OWASP Top 10ベースでセキュリティの穴がないか調べて"
+description = "セキュリティの穴がないか調べる"

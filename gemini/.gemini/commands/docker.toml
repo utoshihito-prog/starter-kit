@@ -1,0 +1,3 @@
+[command]
+prompt = "プロジェクトに合ったDockerfile/docker-composeを作って"
+description = "Docker設定を作る・最適化する"

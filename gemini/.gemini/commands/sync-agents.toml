@@ -1,0 +1,3 @@
+[command]
+prompt = "docs/rules/のルールを全エージェント設定に反映して"
+description = "ルールを全エージェントに反映する"

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "AfterAgent": [
+      {
+        "command": "bash .gemini/hooks/notify.sh 'Gemini CLI' '作業が完了しました' 2>/dev/null || echo '[Gemini] 完了'"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "command": "echo '⚠ セッション終了前に /self-learn を実行して、繰り返しパターンをスキル化しましょう。'"
+      }
+    ]
+  }
+}

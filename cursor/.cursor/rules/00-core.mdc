@@ -1,0 +1,37 @@
+---
+description: コアルール（常時適用）
+alwaysApply: true
+---
+# コアルール
+
+AGENTS.md を読むこと。
+
+## ワークフロー
+1. Brainstorm → 2. Spec → 3. Plan → 4. Execute → 5. Review → 6. Ship
+一文で説明できない変更は必ず計画を作ってから。
+
+## 言葉遣い
+- 中学生・高校生にも分かる日本語で
+- 冗長な長文は禁止。簡潔に
+
+## Git
+- コミットメッセージは日本語。形式: <種別>: <内容>
+- 種別: feat / fix / refactor / test / docs / chore
+- 1タスク = 1コミット
+- コミット前に検証を実行
+
+## 安全
+- ファイル削除前に確認
+- .env をコミットしない
+- テスト未通過でコミットしない
+- 破壊的操作は許可なく実行しない
+
+## コンテキスト
+- 40%以下を維持
+- 1タスク = 1セッション
+
+## 参照
+- プロダクト: docs/product.md
+- 設計: docs/architecture.md
+- ワークフロー: docs/dev-workflow.md
+- テスト: docs/testing.md

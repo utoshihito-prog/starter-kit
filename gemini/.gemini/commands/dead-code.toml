@@ -1,0 +1,3 @@
+[command]
+prompt = "使ってないコード・import・変数を見つけて消して"
+description = "使ってないコードを見つけて消す"

@@ -1,0 +1,3 @@
+[command]
+prompt = "HANDOFF.mdを読んで状況を把握して開発を再開して"
+description = "引き継ぎ資料を読んで開発を再開する"

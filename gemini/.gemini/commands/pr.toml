@@ -1,0 +1,3 @@
+[command]
+prompt = "ブランチの全コミットからPRを作って"
+description = "プルリクエストを作る"

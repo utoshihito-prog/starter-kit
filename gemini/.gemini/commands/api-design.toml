@@ -1,0 +1,3 @@
+[command]
+prompt = "APIの設計ルールが統一されてるかチェックして"
+description = "API設計ルールをチェックする"

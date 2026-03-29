@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rsync -a /Users/libeo/Desktop/starter-kit/claude/.claude/skills/ /Users/libeo/Desktop/starter-kit/codex/.agents/skills/)",
+      "Bash(rsync -a /Users/libeo/Desktop/starter-kit/claude/.claude/skills/ /Users/libeo/Desktop/starter-kit/gemini/.gemini/skills/)",
+      "Bash(rsync -a /Users/libeo/Desktop/starter-kit/claude/.claude/skills/ /Users/libeo/Desktop/starter-kit/cursor/.cursor/skills/)",
+      "Bash(rsync -a /Users/libeo/Desktop/starter-kit/claude/.claude/skills/ /Users/libeo/Desktop/starter-kit/windsurf/.windsurf/skills/)",
+      "Bash(bash /Users/libeo/Desktop/starter-kit/setup.sh /tmp/test-app-claude claude)",
+      "Bash(bash /Users/libeo/Desktop/starter-kit/claude/.claude/hooks/notify.sh \"テスト\" \"通知テストです\")",
+      "Bash(rm -rf /tmp/test-app-multi)",
+      "Bash(bash /Users/libeo/Desktop/starter-kit/setup.sh /tmp/test-app-multi claude cursor)",
+      "Bash(rsync -a /Users/libeo/Desktop/starter-kit/windsurf/ /tmp/test-app-multi/)",
+      "Read(//tmp/test-app-multi/.windsurf/**)",
+      "Bash(chmod +x /Users/libeo/Desktop/starter-kit/gemini/.gemini/hooks/notify.sh)",
+      "Bash(for skill:*)",
+      "Read(//Users/libeo/Desktop/starter-kit/claude/.claude/skills/$skill/**)",
+      "Bash(md5 /Users/libeo/Desktop/starter-kit/claude/.claude/skills/review/SKILL.md /Users/libeo/Desktop/starter-kit/codex/.agents/skills/review/SKILL.md /Users/libeo/Desktop/starter-kit/windsurf/.windsurf/skills/review/SKILL.md /Users/libeo/Desktop/starter-kit/gemini/.gemini/skills/review/SKILL.md /Users/libeo/Desktop/starter-kit/cursor/.cursor/skills/review/SKILL.md)",
+      "Bash(md5 /Users/libeo/Desktop/starter-kit/claude/.claude/skills/team-start/SKILL.md /Users/libeo/Desktop/starter-kit/codex/.agents/skills/team-start/SKILL.md /Users/libeo/Desktop/starter-kit/windsurf/.windsurf/skills/team-start/SKILL.md /Users/libeo/Desktop/starter-kit/gemini/.gemini/skills/team-start/SKILL.md /Users/libeo/Desktop/starter-kit/cursor/.cursor/skills/team-start/SKILL.md)",
+      "Bash(for agent:*)",
+      "Bash(do cp:*)",
+      "Bash(curl -sL --max-time 15 -H 'User-Agent: Mozilla/5.0' https://note.com/log_noise/n/n0f09091e1a5e)",
+      "Bash(curl -sL --max-time 15 -H 'User-Agent: Mozilla/5.0' https://note.com/hitsuji_fire/n/n9005c4908898)",
+      "Bash(curl -sL --max-time 15 -H 'User-Agent: Mozilla/5.0' https://note.com/shogo_hayashi/n/n2e7b6401b93b)",
+      "Bash(curl -sL --max-time 15 -H 'User-Agent: Mozilla/5.0' https://x.com/augmentcode/status/2031020977422012760)",
+      "WebFetch(domain:www.augmentcode.com)",
+      "Bash(chmod +x /Users/libeo/Desktop/starter-kit/shared/scripts/verify.sh)",
+      "Bash(find /Users/libeo/Desktop/starter-kit/gemini/.gemini/commands -name *.toml)",
+      "Read(//Users/libeo/Desktop/starter-kit/$agent/*/skills/land/**)",
+      "Read(//Users/libeo/Desktop/starter-kit/**)",
+      "Bash(do rsync:*)",
+      "Bash(ls /Users/libeo/Desktop/starter-kit/PLAN*.md)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/libeo/Desktop/starter-kit/claude/.claude/skills/taskboard",
+      "/private/tmp/test-app-claude",
+      "/Users/libeo/Desktop/starter-kit/claude/.claude/skills",
+      "/Users/libeo/Desktop"
+    ]
+  }
+}
