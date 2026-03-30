@@ -22,7 +22,12 @@
       "WebFetch(domain:developers.googleblog.com)",
       "Bash(zsh setup.sh /tmp/test-claude-code claude-code)",
       "Bash(zsh setup.sh /tmp/test-antigravity antigravity)",
-      "Bash(zsh setup.sh /tmp/test-typo claude)"
+      "Bash(zsh setup.sh /tmp/test-typo claude)",
+      "Bash(bash setup.sh --help)",
+      "Bash(bash setup.sh /tmp/test-kit antigravity)",
+      "Bash(rm -rf /tmp/test-kit)",
+      "Bash(git -C /Users/libeo/Desktop/starter-kit add -A)",
+      "Bash(git -C /Users/libeo/Desktop/starter-kit status)"
     ],
     "additionalDirectories": [
       "/Users/libeo/Desktop/starter-kit/editors-claude/.claude/skills",

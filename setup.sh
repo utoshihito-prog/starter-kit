@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 # Vibe Coding Starter Kit - セットアップスクリプト
 #
 # 対話モード:  bash setup.sh my-app
@@ -55,8 +55,9 @@ validate_editor() {
   local input="$1"
 
   # 正しいエディタ名ならそのまま返す
-  local folder=$(resolve_folder "$input")
-  if [[ -n "$folder" ]]; then
+  local folder
+  folder=$(resolve_folder "$input")
+  if [ -n "$folder" ]; then
     echo "$input"
     return 0
   fi
@@ -78,8 +79,9 @@ validate_editor() {
       echo "   1) Gemini CLI (ターミナル)" >&2
       echo "   2) Antigravity (Google AI IDE)" >&2
       echo "" >&2
-      read -r "choice?番号を入力 (1/2): "
-      if [[ "$choice" == "2" ]]; then
+      printf "番号を入力 (1/2): " >&2
+      read -r choice
+      if [ "$choice" = "2" ]; then
         echo "antigravity"
       else
         echo "gemini-cli"
@@ -114,10 +116,11 @@ interactive_select() {
   echo "※ AIモデル(Claude, Gemini等)はどのエディタでも選べます。"
   echo "  ここでは「どのエディタで書くか」だけ選んでください。"
   echo ""
-  read -r "selections?番号を入力 (例: 1 or 1 2): "
+  printf "番号を入力 (例: 1 or 1 2): "
+  read -r selections
 
   SELECTED_EDITORS=()
-  for sel in ${=selections}; do
+  for sel in $selections; do
     case "$sel" in
       1) SELECTED_EDITORS+=("claude-code")  ;;
       2) SELECTED_EDITORS+=("cursor")       ;;
@@ -132,7 +135,7 @@ interactive_select() {
     esac
   done
 
-  if [[ ${#SELECTED_EDITORS[@]} -eq 0 ]]; then
+  if [ ${#SELECTED_EDITORS[@]} -eq 0 ]; then
     echo "エラー: 1つ以上選んでください"
     exit 1
   fi
@@ -143,8 +146,9 @@ interactive_select() {
   for ed in "${SELECTED_EDITORS[@]}"; do
     echo "  ✓ $ed"
   done
-  read -r "ok?これでOK？ (Y/n): "
-  if [[ "$ok" == [nN] ]]; then
+  printf "これでOK？ (Y/n): "
+  read -r ok
+  if [ "$ok" = "n" ] || [ "$ok" = "N" ]; then
     echo "中断しました。もう一度実行してください。"
     exit 0
   fi
@@ -153,7 +157,9 @@ interactive_select() {
 # ─── メイン処理 ─────────────────────────────────────
 
 # ヘルプ
-[[ "${1:-}" == "--help" || "${1:-}" == "-h" ]] && show_help
+case "${1:-}" in
+  --help|-h) show_help ;;
+esac
 
 # 引数チェック
 if [ $# -lt 1 ]; then
@@ -180,8 +186,9 @@ if [ -d "$PROJECT" ] && [ "$(ls -A "$PROJECT" 2>/dev/null)" ]; then
   echo ""
   echo "警告: '$PROJECT' は既に存在し、ファイルが含まれています。"
   echo "キットの設定ファイルが追加されます（既存コードは消えません）。"
-  read -r "confirm?続行しますか？ (y/N): "
-  if [[ "$confirm" != [yY] ]]; then
+  printf "続行しますか？ (y/N): "
+  read -r confirm
+  if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
     echo "中断しました。"
     exit 0
   fi
@@ -209,4 +216,5 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 echo "次のステップ:"
 echo "  cd $PROJECT"
-echo "  エディタを起動して /init-project を実行"
+echo "  エディタを起動して「このプロジェクトを初期化して」と指示"
+echo ""

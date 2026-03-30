@@ -6,9 +6,19 @@ alwaysApply: true
 
 AGENTS.md を読むこと。
 
-## ワークフロー
-1. Brainstorm → 2. Spec → 3. Plan → 4. Execute → 5. Review → 6. Ship
-一文で説明できない変更は必ず計画を作ってから。
+## 最優先ルール
+
+1. **スキルファイルに従え**: ユーザーが `/スキル名` と言ったら `.cursor/skills/スキル名/SKILL.md` を読み、その手順通りに実行しろ
+2. **勝手に進めるな**: 成果物を出したら人間に見せて承認を得ろ。承認されるまで次に進むな
+3. **一度に全部やるな**: brainstorm → spec → plan → execute は1ステップずつ
+
+## フェーズゲート
+
+```
+[Brainstorm] → 承認 → [Spec] → 承認 → [Plan] → 承認 → [Execute] → [Review] → [Ship]
+```
+
+禁止: spec未承認でplan作成、plan未承認でコード作成。例外: 人間が「全部一気に」と言った場合のみ
 
 ## 言葉遣い
 - 中学生・高校生にも分かる日本語で
@@ -35,3 +45,5 @@ AGENTS.md を読むこと。
 - 設計: docs/architecture.md
 - ワークフロー: docs/dev-workflow.md
 - テスト: docs/testing.md
+- タスク: docs/tasks.md
+- スキル: .cursor/skills/スキル名/SKILL.md

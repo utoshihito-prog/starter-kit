@@ -93,12 +93,19 @@ bash ~/Desktop/starter-kit/setup.sh my-app claude-code cursor   # 複数併用
 
 ### 方法 3: エージェントに頼む（初心者向け）
 
-エージェントを開いて、こう言うだけ:
+**まずターミナルで setup.sh を実行してから**、エージェントを起動してください:
 
-> ~/Desktop/starter-kit の中にバイブコーディングのスターターキットがあります。
-> これを使って「予約管理アプリ」のプロジェクトを作ってください。
-> 私は Claude Code を使っています。
-> setup.sh を実行してから /init-project で初期化してください。
+```bash
+# 1. まずターミナルで実行（エージェントにやらせない）
+bash ~/Desktop/starter-kit/setup.sh my-app
+
+# 2. プロジェクトフォルダに移動してエディタを起動
+cd my-app
+```
+
+エディタが開いたら、こう言うだけ:
+
+> このプロジェクトを初期化して。/init-project の手順に従って
 
 ### 初めて使う時のコツ
 
