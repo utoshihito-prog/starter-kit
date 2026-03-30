@@ -62,7 +62,9 @@ starter-kit/
 ### 方法 1: 対話モード（おすすめ）
 
 ```bash
-bash ~/Desktop/starter-kit/setup.sh my-app
+# starter-kit フォルダに移動してから実行
+cd Desktop/starter-kit
+bash setup.sh my-app
 ```
 
 番号を選ぶだけ:
@@ -86,9 +88,10 @@ bash ~/Desktop/starter-kit/setup.sh my-app
 ### 方法 2: コマンドで直接指定
 
 ```bash
-bash ~/Desktop/starter-kit/setup.sh my-app claude-code
-bash ~/Desktop/starter-kit/setup.sh my-app antigravity
-bash ~/Desktop/starter-kit/setup.sh my-app claude-code cursor   # 複数併用
+cd Desktop/starter-kit
+bash setup.sh my-app claude-code
+bash setup.sh my-app antigravity
+bash setup.sh my-app claude-code cursor   # 複数併用
 ```
 
 ### 方法 3: エージェントに頼む（初心者向け）
@@ -97,7 +100,8 @@ bash ~/Desktop/starter-kit/setup.sh my-app claude-code cursor   # 複数併用
 
 ```bash
 # 1. まずターミナルで実行（エージェントにやらせない）
-bash ~/Desktop/starter-kit/setup.sh my-app
+cd Desktop/starter-kit
+bash setup.sh my-app
 
 # 2. プロジェクトフォルダに移動してエディタを起動
 cd my-app

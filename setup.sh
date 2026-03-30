@@ -40,6 +40,7 @@ Vibe Coding Starter Kit
   codex         … Codex (OpenAIのCLI)
 
 例:
+  cd Desktop/starter-kit
   bash setup.sh my-app                        ← 対話モード
   bash setup.sh my-app claude-code            ← Claude Code だけ
   bash setup.sh my-app claude-code cursor     ← 複数併用
