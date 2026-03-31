@@ -8,9 +8,25 @@ AGENTS.md を読むこと。
 
 ## 最優先ルール
 
-1. **スキルファイルに従え**: ユーザーが `/スキル名` と言ったら `.cursor/skills/スキル名/SKILL.md` を読み、その手順通りに実行しろ
-2. **勝手に進めるな**: 成果物を出したら人間に見せて承認を得ろ。承認されるまで次に進むな
+1. **スキルを読んで従え**: ユーザーの発言に該当するスキルがあれば `.cursor/skills/スキル名/SKILL.md` を開き、その手順通りに実行しろ。自己流でやるな
+2. **勝手に進めるな**: 成果物を出したら「これでいいですか？」と聞け。OKが出るまで次に行くな
 3. **一度に全部やるな**: brainstorm → spec → plan → execute は1ステップずつ
+4. **テンプレートを自分で埋めるな**: `{{...}}` は init-project スキルが埋める
+
+## ユーザーの発言 → スキル対応表
+
+| 発言 | スキル |
+|------|--------|
+| 「初期化して」 | `.cursor/skills/init-project/SKILL.md` |
+| 「計画して」 | `.cursor/skills/plan/SKILL.md` |
+| 「レビューして」 | `.cursor/skills/review/SKILL.md` |
+| 「/スキル名」 | `.cursor/skills/スキル名/SKILL.md` |
+
+## 初回
+
+1. このファイルと AGENTS.md を読む
+2. ユーザーに「何をしますか？」と聞く
+3. **禁止: docs/ のテンプレートを勝手に埋めること**
 
 ## フェーズゲート
 
@@ -18,7 +34,7 @@ AGENTS.md を読むこと。
 [Brainstorm] → 承認 → [Spec] → 承認 → [Plan] → 承認 → [Execute] → [Review] → [Ship]
 ```
 
-禁止: spec未承認でplan作成、plan未承認でコード作成。例外: 人間が「全部一気に」と言った場合のみ
+禁止: spec未承認でplan作成、plan未承認でコード作成。例外: 「全部一気に」と言われた場合のみ
 
 ## 言葉遣い
 - 中学生・高校生にも分かる日本語で
@@ -26,7 +42,6 @@ AGENTS.md を読むこと。
 
 ## Git
 - コミットメッセージは日本語。形式: <種別>: <内容>
-- 種別: feat / fix / refactor / test / docs / chore
 - 1タスク = 1コミット
 - コミット前に検証を実行
 
@@ -34,16 +49,6 @@ AGENTS.md を読むこと。
 - ファイル削除前に確認
 - .env をコミットしない
 - テスト未通過でコミットしない
-- 破壊的操作は許可なく実行しない
-
-## コンテキスト
-- 40%以下を維持
-- 1タスク = 1セッション
 
 ## 参照
-- プロダクト: docs/product.md
-- 設計: docs/architecture.md
-- ワークフロー: docs/dev-workflow.md
-- テスト: docs/testing.md
-- タスク: docs/tasks.md
-- スキル: .cursor/skills/スキル名/SKILL.md
+- AGENTS.md、docs/、.cursor/skills/
