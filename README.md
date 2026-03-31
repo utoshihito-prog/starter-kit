@@ -64,7 +64,7 @@ starter-kit/
 ```bash
 # starter-kit フォルダに移動してから実行
 cd Desktop/starter-kit
-bash setup.sh my-app
+bash setup.sh my-app    # ← "my-app" は好きなプロジェクト名に変えてOK
 ```
 
 番号を選ぶだけ:
