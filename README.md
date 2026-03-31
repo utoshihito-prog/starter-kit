@@ -57,59 +57,55 @@ starter-kit/
 
 ---
 
-## 始め方
+## 始め方（3ステップ）
 
-### 方法 1: 対話モード（おすすめ）
+### ステップ 1: ターミナルでセットアップを実行
 
 ```bash
-# starter-kit フォルダに移動してから実行
 cd Desktop/starter-kit
 bash setup.sh my-app    # ← "my-app" は好きなプロジェクト名に変えてOK
 ```
 
-番号を選ぶだけ:
+エディタを選ぶ画面が出るので、番号を入力:
 
 ```
-┌─────────────────────────────────────────┐
-│  どのエディタで開発しますか？            │
-│  （複数選べます。番号をスペース区切り）  │
-└─────────────────────────────────────────┘
-
   1) Claude Code      … ターミナルで動くCLI
   2) Cursor           … VS Code系のAI IDE
   3) Windsurf         … VS Code系のAI IDE
   4) Antigravity      … GoogleのAI IDE
   5) Gemini CLI       … ターミナルで動くCLI
   6) Codex            … OpenAIのCLI
-
-番号を入力 (例: 1 or 1 2):
 ```
 
-### 方法 2: コマンドで直接指定
+> エディタ名を直接指定することもできます:
+> ```bash
+> bash setup.sh my-app antigravity
+> bash setup.sh my-app claude-code cursor   # 複数併用
+> ```
 
-```bash
-cd Desktop/starter-kit
-bash setup.sh my-app claude-code
-bash setup.sh my-app antigravity
-bash setup.sh my-app claude-code cursor   # 複数併用
-```
+これで `my-app` フォルダが作られます。中にルールやスキルが入っています。
 
-### 方法 3: エージェントに頼む（初心者向け）
+### ステップ 2: エディタでプロジェクトフォルダを開く
 
-**まずターミナルで setup.sh を実行してから**、エージェントを起動してください:
+作られた `my-app` フォルダをエディタで開きます:
 
-```bash
-# 1. まずターミナルで実行（エージェントにやらせない）
-cd Desktop/starter-kit
-bash setup.sh my-app
+| エディタ | 開き方 |
+|---------|--------|
+| Antigravity | Antigravity を開く → `my-app` フォルダを開く |
+| Cursor | Cursor を開く → File > Open Folder → `my-app` を選ぶ |
+| Windsurf | Windsurf を開く → File > Open Folder → `my-app` を選ぶ |
+| Claude Code | ターミナルで `cd my-app` → `claude` と打つ |
+| Gemini CLI | ターミナルで `cd my-app` → `gemini` と打つ |
+| Codex | ターミナルで `cd my-app` → `codex` と打つ |
 
-# 2. プロジェクトフォルダに移動してエディタを起動
-cd my-app
-```
+### ステップ 3: エージェントに話しかける
 
-エディタが開いたら、こう言うだけ:
+エディタのチャット欄に、こう打ちます:
 
-> このプロジェクトを初期化して。/init-project の手順に従って
+> このプロジェクトを初期化して
+
+エージェントが GEMINI.md（や CLAUDE.md 等）を読んで、何を作るか聞いてきます。
+あとは会話しながら進めるだけです。
 
 ### 初めて使う時のコツ
 
