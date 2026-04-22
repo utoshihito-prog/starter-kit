@@ -92,7 +92,7 @@ N（協力会社管理部門）はファイル転送サービスを利用して�
 | 例外 | 分岐 | 参照 |
 |---|---|---|
 | 受付システム差異 | 論理項目を `04-data-model.md` に合わせてマッピング | `04-data-model.md` |
-| 報告先情報変更 | 営業担当者へ速やかに情報提供し、お客様情報シートを更新 | `04-data-model.md` |
+| 報告先情報変更 | N（営業担当）へ速やかに情報提供し、お客様情報シートを更新 | `04-data-model.md` |
 | ファイル転送サービスアクセス不可 | 企業管理者がN（協力会社管理部門）へ連絡 | `03-glossary.md` |
 | 報告フォーマット差異 | N（協力会社管理部門）が顧客向けフォーマットへ変換 | `04-data-model.md` |
 
@@ -106,4 +106,3 @@ N（協力会社管理部門）はファイル転送サービスを利用して�
 - `_source/shared/service-catalog.xlsx`
 - `_source/shared/reception-ledger.pdf`
 - `_source/shared/reception-ledger.xlsx`
-
