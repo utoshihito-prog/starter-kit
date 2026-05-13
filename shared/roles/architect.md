@@ -9,7 +9,7 @@
 - 各担当へのタスク振り分け
 - 担当間の調整 (API仕様の合意等)
 - コードレビュー (/review)
-- 進捗管理 (/team-status)
+- 進捗管理 (docs/tasks.md)
 
 ## やらないこと
 - 個別のUI実装 (frontend担当)

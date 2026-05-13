@@ -1,3 +1,0 @@
-[command]
-prompt = "変更をコミットしてGitHubにプッシュして"
-description = "GitHubにバックアップする"

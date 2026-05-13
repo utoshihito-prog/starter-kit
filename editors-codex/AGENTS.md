@@ -4,8 +4,8 @@
 
 1. **スキルを読んで従え**: ユーザーの発言に該当するスキルがあれば `.agents/skills/スキル名/SKILL.md` を開き、その手順通りに実行しろ。自己流でやるな
 2. **勝手に進めるな**: 成果物を出したら「これでいいですか？」と聞け。OKが出るまで次に行くな
-3. **一度に全部やるな**: brainstorm → spec → plan → execute は1ステップずつ。まとめてやるな
-4. **テンプレートを自分で埋めるな**: `{{...}}` が残っているファイルは init-project スキルが埋める。手動で穴埋めするな
+3. **一度に全部やるな**: spec → plan → execute は1ステップずつ。まとめてやるな
+4. **テンプレートを自分で埋めるな**: `{{...}}` が残っているファイルは `/auto` または初回起動時にユーザーと一緒に埋める。勝手に推測しない
 
 ## ユーザーの発言 → やること対応表
 
@@ -13,15 +13,21 @@
 
 | ユーザーの発言 | 読むスキル |
 |--------------|-----------|
-| 「初期化して」「プロジェクトを作って」「セットアップして」 | `.agents/skills/init-project/SKILL.md` |
-| 「計画して」「タスクに分けて」 | `.agents/skills/plan/SKILL.md` |
+| 「とりあえず進めて」「お任せ」 | `.agents/skills/auto/SKILL.md` |
 | 「仕様書を作って」 | `.agents/skills/spec/SKILL.md` |
-| 「レビューして」 | `.agents/skills/review/SKILL.md` |
-| 「コミットして」 | `.agents/skills/commit/SKILL.md` |
-| 「進捗見せて」 | `.agents/skills/progress/SKILL.md` |
-| 「バックアップして」 | `.agents/skills/backup/SKILL.md` |
+| 「計画して」「タスクに分けて」 | `.agents/skills/plan/SKILL.md` |
+| 「TDDで」「テスト先に」 | `.agents/skills/tdd/SKILL.md` |
+| 「整理して」「リファクタ」 | `.agents/skills/refactor/SKILL.md` |
+| 「バグ調べて」 | `.agents/skills/diagnose/SKILL.md` |
 | 「テスト作って」 | `.agents/skills/test-gen/SKILL.md` |
-| 「引き継ぎ資料を作って」 | `.agents/skills/handoff/SKILL.md` |
+| 「レビューして」 | `.agents/skills/review/SKILL.md` |
+| 「セキュリティ見て」 | `.agents/skills/security-check/SKILL.md` |
+| 「シンプルにして」 | `.agents/skills/polish/SKILL.md` |
+| 「コミットして」 | `.agents/skills/commit/SKILL.md` |
+| 「PR作って」 | `.agents/skills/pr/SKILL.md` |
+| 「テスト通してpush」「リリース」 | `.agents/skills/land/SKILL.md` |
+| 「引き継ぎ作って」 | `.agents/skills/handoff/SKILL.md` |
+| 「再開」 | `.agents/skills/resume/SKILL.md` |
 | 「/スキル名」 | `.agents/skills/スキル名/SKILL.md` |
 
 ## 初回（プロジェクトに初めて触る時）
@@ -35,7 +41,6 @@
 ## フェーズゲート（飛ばすな）
 
 ```
-[Brainstorm] → 人間が承認 →
 [Spec]       → 人間が承認 →
 [Plan]       → 人間が承認 →
 [Execute]    → 差分ごとに検証 →
@@ -49,7 +54,7 @@
 - 人間が「進めて」と言っていないのに次に行くこと
 - 例外: 人間が「全部一気にやって」と言った場合のみスキップ可
 
-## コマンド（init-project が埋める。手動で埋めるな）
+## コマンド（/auto または初回セットアップで埋める。手動で穴埋めしない）
 
 - ビルド: `{{BUILD_CMD}}`
 - テスト: `{{TEST_CMD}}`
@@ -102,5 +107,5 @@
 ## 注意: サンドボックス
 
 Codex はデフォルトでサンドボックス内で動作する。
-/backup, /pr, /deps 等のネットワークが必要なスキルは
+/pr 等のネットワークが必要なスキルは
 `danger-full-access` モードで実行する必要がある。

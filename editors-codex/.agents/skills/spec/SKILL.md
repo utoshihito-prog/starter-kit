@@ -13,10 +13,10 @@ disable-model-invocation: true
 ## パイプライン上の位置
 
 ```
-/brainstorm → 【/spec ← いまここ】→ /plan → docs/tasks.md → 実装開始
+【/spec ← いまここ】→ /plan → docs/tasks.md → 実装開始
 ```
 
-- 入力: docs/brainstorm-*.md、docs/product.md、$ARGUMENTS のいずれか
+- 入力: docs/product.md、$ARGUMENTS のいずれか
 - 出力: `docs/spec.md`（または `docs/spec-[機能名].md`）
 
 ## 手順
@@ -25,12 +25,10 @@ disable-model-invocation: true
 
 以下の優先順位で情報を集める:
 
-1. `docs/brainstorm-*.md` が存在するか確認する（/brainstorm の出力）
-   - あれば読み込んで、決定された案をベースにする
-2. `docs/product.md` が存在するか確認する
+1. `docs/product.md` が存在するか確認する
    - あれば読み込んで、プロダクト要件を把握する
-3. $ARGUMENTS が指定されている場合はそのテーマで作成する
-4. 何もなければユーザーに「何の仕様書を作りますか？」と聞く
+2. $ARGUMENTS が指定されている場合はそのテーマで作成する
+3. 何もなければユーザーに「何の仕様書を作りますか？」と聞く
 
 ### ステップ2: 既存システムとの整合性チェック
 
@@ -167,8 +165,6 @@ disable-model-invocation: true
 
 仕様の内容から以下を自動検出して警告する:
 
-- **DBスキーマ変更あり** → 「マイグレーションが必要です。/db-migrate を使ってください」
-- **新しいAPIエンドポイント** → 「API設計のレビューを /api-design で行うことを推奨します」
 - **認証・認可の変更** → 「セキュリティに影響する変更です。/security-check を実装後に実行してください」
 - **外部API依存** → 「外部APIの障害時のフォールバックを検討してください」
 
@@ -198,4 +194,4 @@ disable-model-invocation: true
 - ユーザーストーリーが10個を超えたら「スコープが大きいです。Phase分けしますか？」と提案する
 
 ### 技術スタックが未定の場合
-- docs/architecture.md がない場合: 技術制約セクションは「TBD（/init-project で決定）」にする
+- docs/architecture.md がない場合: 技術制約セクションは「TBD（/auto または初回設定で決定）」にする

@@ -4,8 +4,8 @@
 
 1. **スキルを読んで従え**: ユーザーの発言に該当するスキルがあれば `.gemini/skills/スキル名/SKILL.md` を開き、その手順通りに実行しろ。自己流でやるな
 2. **勝手に進めるな**: 成果物を出したら「これでいいですか？」と聞け。OKが出るまで次に行くな
-3. **一度に全部やるな**: brainstorm → spec → plan → execute は1ステップずつ。まとめてやるな
-4. **テンプレートを自分で埋めるな**: `{{...}}` が残っているファイルは init-project スキルが埋める。手動で穴埋めするな
+3. **一度に全部やるな**: spec → plan → execute は1ステップずつ。まとめてやるな
+4. **テンプレートを自分で埋めるな**: `{{...}}` が残っているファイルは `/auto` または初回起動時にユーザーと一緒に埋める。勝手に推測しない
 
 ## ユーザーの発言 → やること対応表
 
@@ -14,15 +14,21 @@
 
 | ユーザーの発言 | 読むスキル |
 |--------------|-----------|
-| 「初期化して」「プロジェクトを作って」「セットアップして」 | `.gemini/skills/init-project/SKILL.md` |
-| 「計画して」「タスクに分けて」 | `.gemini/skills/plan/SKILL.md` |
+| 「とりあえず進めて」「お任せ」 | `.gemini/skills/auto/SKILL.md` |
 | 「仕様書を作って」 | `.gemini/skills/spec/SKILL.md` |
-| 「レビューして」 | `.gemini/skills/review/SKILL.md` |
-| 「コミットして」 | `.gemini/skills/commit/SKILL.md` |
-| 「進捗見せて」 | `.gemini/skills/progress/SKILL.md` |
-| 「バックアップして」 | `.gemini/skills/backup/SKILL.md` |
+| 「計画して」「タスクに分けて」 | `.gemini/skills/plan/SKILL.md` |
+| 「TDDで」 | `.gemini/skills/tdd/SKILL.md` |
+| 「整理して」「リファクタ」 | `.gemini/skills/refactor/SKILL.md` |
+| 「バグ調べて」 | `.gemini/skills/diagnose/SKILL.md` |
 | 「テスト作って」 | `.gemini/skills/test-gen/SKILL.md` |
-| 「引き継ぎ資料を作って」 | `.gemini/skills/handoff/SKILL.md` |
+| 「レビューして」 | `.gemini/skills/review/SKILL.md` |
+| 「セキュリティ見て」 | `.gemini/skills/security-check/SKILL.md` |
+| 「シンプルにして」 | `.gemini/skills/polish/SKILL.md` |
+| 「コミットして」 | `.gemini/skills/commit/SKILL.md` |
+| 「PR作って」 | `.gemini/skills/pr/SKILL.md` |
+| 「テスト通してpush」「リリース」 | `.gemini/skills/land/SKILL.md` |
+| 「引き継ぎ作って」 | `.gemini/skills/handoff/SKILL.md` |
+| 「再開」 | `.gemini/skills/resume/SKILL.md` |
 | 「/スキル名」 | `.gemini/skills/スキル名/SKILL.md` |
 
 **スキルファイルが見つかったら、そこに書いてある手順を上から順に実行する。飛ばさない。**
@@ -38,7 +44,6 @@
 ## フェーズゲート（飛ばすな）
 
 ```
-[Brainstorm] → 人間がOK →
 [Spec]       → 人間がOK →
 [Plan]       → 人間がOK →
 [Execute]    → 差分ごとに検証 →
@@ -52,7 +57,7 @@
 - 人間が「進めて」と言っていないのに次に行くこと
 - 例外: 人間が「全部一気にやって」と言った場合のみスキップ可
 
-## コマンド（init-project が埋める。手動で埋めるな）
+## コマンド（/auto または初回セットアップで埋める。手動で穴埋めしない）
 
 - ビルド: `{{BUILD_CMD}}`
 - テスト: `{{TEST_CMD}}`

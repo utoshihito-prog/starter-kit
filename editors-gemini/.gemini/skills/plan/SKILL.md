@@ -14,10 +14,10 @@ agent: Plan
 ## パイプライン上の位置
 
 ```
-/brainstorm → /spec → 【/plan ← いまここ】→ docs/tasks.md → 実装開始
+/spec → 【/plan ← いまここ】→ docs/tasks.md → 実装開始
 ```
 
-- 入力: $ARGUMENTS、または docs/spec.md / docs/spec-*.md / docs/brainstorm-*.md
+- 入力: $ARGUMENTS、または docs/spec.md / docs/spec-*.md
 - 出力: plans/ に計画ファイル → ユーザー承認後 docs/tasks.md に追記
 
 ## 手順
@@ -28,9 +28,8 @@ agent: Plan
 
 1. $ARGUMENTS が指定されていれば、それを機能要求として使う
 2. docs/spec.md または docs/spec-*.md があれば読む（/spec の出力）
-3. docs/brainstorm-*.md があれば読む（/brainstorm の出力）
-4. docs/architecture.md があれば読む（技術制約の把握）
-5. どれもなければユーザーに「何を作りたいか」を聞く
+3. docs/architecture.md があれば読む（技術制約の把握）
+4. どれもなければユーザーに「何を作りたいか」を聞く
 
 ### ステップ2: 既存コードベースの調査
 

@@ -1,14 +1,23 @@
 # 開発ワークフロー
 
-## 基本フロー
-1. AGENTS.md と関連 docs/ を読む
-2. Brainstorm（/brainstorm）— 何を作る？エッジケースは？
-3. Spec（/spec）— 仕様書を作って認識を合わせる
-4. Plan（/plan）— タスク分解して plans/ に保存。人間が確認・削る
-5. Execute — 小さい差分で実装。差分ごとに検証
-6. Review（/review）— 別視点でチェック
-7. Ship（/land）— テスト→リント→コミット→push
-8. docs/ を更新
+## 基本フロー (Auto Mode 推奨)
+
+```
+/auto <やりたいこと>
+```
+
+`/auto` が依頼を分類して以下を自動進行する。要所だけ人間に確認を求める。
+
+| Phase | Skill |
+|-------|-------|
+| Define | `/spec` |
+| Plan | `/plan` (→ plans/ に保存) |
+| Build | TDD or 直接実装 → `/refactor` |
+| Verify | `/diagnose` / `/test-gen` |
+| Review | `/review` / `/security-check` / `/polish` |
+| Ship | `/commit` → `/pr` → `/land` |
+
+手動で1つずつ進めたい時は個別スキルを直接呼ぶ。
 
 ## いつ計画が必要か
 必要:

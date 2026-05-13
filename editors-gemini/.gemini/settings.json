@@ -7,7 +7,7 @@
     ],
     "SessionEnd": [
       {
-        "command": "echo '⚠ セッション終了前に /self-learn を実行して、繰り返しパターンをスキル化しましょう。'"
+        "command": "echo '⚠ セッション終了前に /handoff で引き継ぎ資料を残すか確認しましょう。'"
       }
     ]
   }
